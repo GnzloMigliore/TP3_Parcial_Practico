@@ -1,5 +1,16 @@
 <resources>
-    <string name="app_name">Parcial_Practico_TP3</string>
+    <string name="app_name">BE-TP3 / Parcial Practico / G4</string>
+
+    <string name="login_usuario">Usuario</string>
+    <string name="login_password">Contraseña</string>
+    <string name="login_titulo">Rick and Morty</string>
+    <string name="login_olvidaste">Olvidaste tu contraseña?</string>
+    <string name="login_olvido">Recuperar contraseña</string>
+    <string name="login_recuperar">Recuperar</string>
+    <string name="login_recuperar_texto">Se te enviará por mail una nueva!</string>
+    <string name="login_continuar">Continuar</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
 </resources>
