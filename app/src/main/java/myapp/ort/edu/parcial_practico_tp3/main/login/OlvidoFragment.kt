@@ -12,11 +12,10 @@ import android.widget.Toast
 import myapp.ort.edu.parcial_practico_tp3.R
 
 class OlvidoFragment : Fragment() {
-
     private lateinit var btnRecuperar: Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
     }
 
     override fun onCreateView(
@@ -27,16 +26,14 @@ class OlvidoFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_olvido, container, false)
         btnRecuperar = view.findViewById(R.id.buttonRecuperar)
 
-        btnRecuperar.setOnClickListener{
+        btnRecuperar.setOnClickListener {
             Toast.makeText(activity, "¡Email enviado!", Toast.LENGTH_SHORT)
                 .show()
             Handler(Looper.getMainLooper()).postDelayed(
                 {
                     (context as LoginActivity).changeFragment(LoginFragment.newInstance())
-                }
-                , 2000)
+                }, 2000)
         }
-
         return view
     }
 

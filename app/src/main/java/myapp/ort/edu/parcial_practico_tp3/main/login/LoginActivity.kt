@@ -14,7 +14,7 @@ class LoginActivity : AppCompatActivity() {
         changeFragment(loginFragment)
     }
 
-    fun changeFragment(fragment: Fragment){
+    fun changeFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction().apply {
             replace(R.id.frameLayoutLogin, fragment)
             commit()
