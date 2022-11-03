@@ -9,5 +9,15 @@
         android:id="@+id/fragmentHome"
         android:name="myapp.ort.edu.parcial_practico_tp3.main.FragmentHome"
         android:label="fragment_fragment_home"
-        tools:layout="@layout/fragment_fragment_home" />
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/fragmentFavoritos"
+        android:name="myapp.ort.edu.parcial_practico_tp3.main.FragmentFavoritos"
+        android:label="fragment_favoritos"
+        tools:layout="@layout/fragment_favoritos" />
+    <fragment
+        android:id="@+id/fragmentSettings"
+        android:name="myapp.ort.edu.parcial_practico_tp3.main.FragmentSettings"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
 </navigation>
