@@ -113,6 +113,6 @@ class FragmentSettings : Fragment() {
     companion object {
         fun newInstance(): FragmentSettings {
             return FragmentSettings()
-                   }
-            }
+        }
+    }
 }
