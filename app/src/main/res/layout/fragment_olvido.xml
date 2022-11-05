@@ -6,12 +6,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".main.login.OlvidoFragment">
+
     <TextView
         android:id="@+id/textViewTituloOlvido"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/login_olvido"
-        android:textColor="@color/black"
         android:layout_marginTop="15dp"
         android:textSize="28sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -19,13 +19,13 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextUsuarioRec"
+        android:id="@+id/editTextEmail"
         android:layout_width="250dp"
         android:layout_height="48dp"
         android:layout_marginTop="30dp"
         android:background="@drawable/bordes_rounded_black"
         android:ems="10"
-        android:hint="@string/login_usuario"
+        android:hint="@string/login_email"
         android:textSize="20sp"
         android:inputType="textPersonName"
         android:minHeight="48dp"
@@ -44,8 +44,8 @@
         android:textSize="11sp"
         android:layout_marginTop="10dp"
         android:paddingStart="15sp"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextUsuarioRec"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextUsuarioRec"
+        app:layout_constraintStart_toStartOf="@+id/editTextEmail"
+        app:layout_constraintTop_toBottomOf="@+id/editTextEmail"
         tools:ignore="RtlSymmetry" />
 
     <Button
@@ -63,6 +63,6 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextUsuarioRec" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextEmail" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

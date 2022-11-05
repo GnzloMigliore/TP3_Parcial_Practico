@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout3"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".main.AcercaFragment">
+
+    <TextView
+        android:id="@+id/textViewCurso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sett_curso"
+        android:layout_marginTop="25sp"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewG4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sett_g4"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginTop="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCurso" />
+
+    <TextView
+        android:id="@+id/textViewJP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sett_acerca1"
+        android:layout_marginTop="5sp"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewG4" />
+
+    <TextView
+        android:id="@+id/textViewGM"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sett_acerca2"
+        android:layout_marginTop="5sp"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewJP" />
+
+    <TextView
+        android:id="@+id/textViewDP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sett_acerca3"
+        android:layout_marginTop="5sp"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewGM" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

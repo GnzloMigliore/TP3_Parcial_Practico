@@ -5,56 +5,92 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import myapp.ort.edu.parcial_practico_tp3.R
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [FragmentSettings.newInstance] factory method to
- * create an instance of this fragment.
- */
 class FragmentSettings : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private lateinit var tVSettNightMode: TextView
+    private lateinit var tVBuscadorOnOff: TextView
+    private lateinit var tVFavoritosOnOff: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_settings, container, false)
+        val view = inflater.inflate(R.layout.fragment_settings, container, false)
+        tVSettNightMode = view.findViewById(R.id.textViewSettNightMode)
+        tVBuscadorOnOff = view.findViewById(R.id.textViewBuscadorOnOff)
+        tVFavoritosOnOff = view.findViewById(R.id.textViewFavoritosOnOff)
+
+        val sharedPreferences =
+            activity?.getSharedPreferences("SETTINGS_DATA", AppCompatActivity.MODE_PRIVATE)
+
+        var nightMode = sharedPreferences?.getBoolean("nightMode", false) == true
+        toggleNightMode(nightMode)
+        var buscador = sharedPreferences?.getBoolean("buscador", false) == true
+        toggleBuscador(buscador)
+        var favoritos = sharedPreferences?.getBoolean("favoritos", false) == true
+        toggleFavoritos(favoritos)
+
+        tVSettNightMode.setOnClickListener {
+            nightMode = sharedPreferences?.getBoolean("nightMode", false) == true
+            val settingsData = sharedPreferences?.edit()
+            settingsData?.putBoolean("nightMode", !nightMode)
+            settingsData?.apply()
+            toggleNightMode(!nightMode)
+        }
+
+        tVBuscadorOnOff.setOnClickListener {
+            buscador = sharedPreferences?.getBoolean("buscador", false) == true
+            val settingsData = sharedPreferences?.edit()
+            settingsData?.putBoolean("buscador", !buscador)
+            settingsData?.apply()
+            toggleBuscador(!buscador)
+        }
+
+        tVFavoritosOnOff.setOnClickListener {
+            favoritos = sharedPreferences?.getBoolean("favoritos", false) == true
+            val settingsData = sharedPreferences?.edit()
+            settingsData?.putBoolean("favoritos", !favoritos)
+            settingsData?.apply()
+            toggleFavoritos(!favoritos)
+        }
+        return view
+    }
+
+    private fun toggleNightMode(nightMode: Boolean) {
+        if (nightMode) {
+            tVSettNightMode.setText(getString(R.string.sett_day_mode))
+        } else {
+            tVSettNightMode.setText(getString(R.string.sett_night_mode))
+        }
+    }
+
+    private fun toggleBuscador(buscador: Boolean) {
+        if (buscador) {
+            tVBuscadorOnOff.setText(getString(R.string.sett_buscador_off))
+        } else {
+            tVBuscadorOnOff.setText(getString(R.string.sett_buscador_on))
+        }
+    }
+
+    private fun toggleFavoritos(favoritos: Boolean) {
+        if (favoritos) {
+            tVFavoritosOnOff.setText(getString(R.string.sett_favoritos_off))
+        } else {
+            tVFavoritosOnOff.setText(getString(R.string.sett_favoritos_on))
+        }
     }
 
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment FragmentSettings.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            FragmentSettings().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+        fun newInstance(): FragmentSettings {
+            return FragmentSettings()
+        }
     }
 }

@@ -1,17 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/purple_200"
     tools:context=".main.FragmentSettings">
 
-    <!-- TODO: Update blank fragment layout -->
+
     <TextView
-        android:id="@+id/Settings"
+        android:id="@+id/textViewSettNightMode"
         android:layout_width="wrap_content"
-        android:layout_gravity="center"
         android:layout_height="wrap_content"
-        android:text="SETTINGS"
-       />
-</FrameLayout>
+        android:layout_marginTop="40sp"
+        android:text="@string/sett_night_mode"
+        android:textSize="20sp"
+        android:layout_marginStart="25sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewBuscadorOnOff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
+        android:text="@string/sett_buscador_on"
+        android:layout_marginStart="25sp"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewSettNightMode" />
+
+    <TextView
+        android:id="@+id/textViewFavoritosOnOff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
+        android:text="@string/sett_favoritos_on"
+        android:layout_marginStart="25sp"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewBuscadorOnOff" />
+</androidx.constraintlayout.widget.ConstraintLayout>
