@@ -13,6 +13,6 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="open">Open</string>
     <string name="close">Close</string>
-
+    <string name="home_title">Hola nombre, estos son tus personajes favoritos</string>
 
 </resources>

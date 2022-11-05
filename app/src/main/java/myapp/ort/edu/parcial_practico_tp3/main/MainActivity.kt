@@ -1,18 +1,11 @@
 package myapp.ort.edu.parcial_practico_tp3.main
 
 import android.os.Bundle
-import android.view.Menu
 import android.view.MenuItem
-import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.replace
-import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.NavigationUI
-
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 import myapp.ort.edu.parcial_practico_tp3.R
 
