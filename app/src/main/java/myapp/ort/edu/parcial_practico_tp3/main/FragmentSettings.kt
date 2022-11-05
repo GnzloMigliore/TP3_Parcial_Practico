@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import myapp.ort.edu.parcial_practico_tp3.R
 
@@ -24,7 +23,6 @@ class FragmentSettings : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_settings, container, false)
         tVSettNightMode = view.findViewById(R.id.textViewSettNightMode)
         tVBuscadorOnOff = view.findViewById(R.id.textViewBuscadorOnOff)
@@ -46,11 +44,6 @@ class FragmentSettings : Fragment() {
             settingsData?.putBoolean("nightMode", !nightMode)
             settingsData?.apply()
             toggleNightMode(!nightMode)
-            Toast.makeText(
-                activity?.applicationContext,
-                "$nightMode",
-                Toast.LENGTH_SHORT
-            ).show()
         }
 
         tVBuscadorOnOff.setOnClickListener {
@@ -59,11 +52,6 @@ class FragmentSettings : Fragment() {
             settingsData?.putBoolean("buscador", !buscador)
             settingsData?.apply()
             toggleBuscador(!buscador)
-            Toast.makeText(
-                activity?.applicationContext,
-                "$buscador",
-                Toast.LENGTH_SHORT
-            ).show()
         }
 
         tVFavoritosOnOff.setOnClickListener {
@@ -72,17 +60,7 @@ class FragmentSettings : Fragment() {
             settingsData?.putBoolean("favoritos", !favoritos)
             settingsData?.apply()
             toggleFavoritos(!favoritos)
-            Toast.makeText(
-                activity?.applicationContext,
-                "$favoritos",
-                Toast.LENGTH_SHORT
-            ).show()
         }
-        Toast.makeText(
-            activity?.applicationContext,
-            "No completaste con tus datos!",
-            Toast.LENGTH_SHORT
-        ).show()
         return view
     }
 

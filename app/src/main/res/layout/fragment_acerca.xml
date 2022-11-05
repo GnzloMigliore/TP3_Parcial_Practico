@@ -12,7 +12,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/sett_curso"
-        android:layout_marginTop="20sp"
+        android:layout_marginTop="25sp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -35,6 +36,7 @@
         android:layout_height="wrap_content"
         android:text="@string/sett_acerca1"
         android:layout_marginTop="5sp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewG4" />
@@ -45,6 +47,7 @@
         android:layout_height="wrap_content"
         android:text="@string/sett_acerca2"
         android:layout_marginTop="5sp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewJP" />
@@ -55,6 +58,7 @@
         android:layout_height="wrap_content"
         android:text="@string/sett_acerca3"
         android:layout_marginTop="5sp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewGM" />

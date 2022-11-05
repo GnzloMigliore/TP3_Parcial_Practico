@@ -21,14 +21,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val HomeFragment = FragmentHome()
         replaceFragment(HomeFragment)
         drawerLayout = findViewById(R.id.drawer_layout_id)
-
         val navView : NavigationView = findViewById(R.id.navigationView)
-       toggle = ActionBarDrawerToggle(this, drawerLayout,R.string.open,R.string.close )
+        toggle = ActionBarDrawerToggle(this, drawerLayout,R.string.open,R.string.close )
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         navView.setNavigationItemSelectedListener(this)
-
     }
 
     private fun replaceFragment(fragment: Fragment) {
