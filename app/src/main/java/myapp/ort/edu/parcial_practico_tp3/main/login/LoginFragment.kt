@@ -29,7 +29,6 @@ class LoginFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_login, container, false)
         txtOlvido = view.findViewById(R.id.textViewOlvidaste)
         btnContinuar = view.findViewById(R.id.buttonContinuar)

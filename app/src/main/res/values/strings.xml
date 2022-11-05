@@ -24,5 +24,6 @@
     <string name="sett_acerca2">Gonzalo Migliore</string>
     <string name="sett_acerca3">Daniel Pisa</string>
     <string name="sett_g4">Group 4</string>
+    <string name="fav_titulo">"Hola %1$s, estos son tus \npersonajes favoritos!"</string>
 
 </resources>

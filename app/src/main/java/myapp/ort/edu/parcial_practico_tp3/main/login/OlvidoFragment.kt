@@ -24,7 +24,6 @@ class OlvidoFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_olvido, container, false)
         eTEmail = view.findViewById(R.id.editTextEmail)
         btnRecuperar = view.findViewById(R.id.buttonRecuperar)
