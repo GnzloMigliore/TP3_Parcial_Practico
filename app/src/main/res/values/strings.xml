@@ -25,5 +25,7 @@
     <string name="sett_acerca3">Daniel Pisa</string>
     <string name="sett_g4">Group 4</string>
     <string name="fav_titulo">"Hola %1$s, estos son tus \npersonajes favoritos!"</string>
+    <string name="home_title">Hola nombre, estos son tus personajes favoritos</string>
+
 
 </resources>
