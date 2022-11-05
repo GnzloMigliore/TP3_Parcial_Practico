@@ -35,37 +35,30 @@ class LoginFragment : Fragment() {
         btnContinuar = view.findViewById(R.id.buttonContinuar)
         eTUsuario = view.findViewById(R.id.editTextUsuario)
         eTPassword = view.findViewById(R.id.editTextPassword)
-
-
         txtOlvido.setOnClickListener {
             (context as LoginActivity).changeFragment(OlvidoFragment.newInstance())
         }
-
         btnContinuar.setOnClickListener {
             val usuario = eTUsuario.text.toString()
             val password = eTPassword.text.toString()
-            if (usuario.isNotEmpty() && password.isNotEmpty()) {
-                val sharedPreferences =
-                    activity?.getSharedPreferences("LOGIN_DATA", AppCompatActivity.MODE_PRIVATE)
-                val loginData = sharedPreferences?.edit()
-                loginData?.putString("usuario", usuario)
-                loginData?.putString("password", password)
-                loginData?.apply()
-                startActivity(Intent(activity, MainActivity::class.java))
-            } else {
-                Toast.makeText(
-                    activity?.applicationContext,
-                    "No completaste con tus datos!",
-                    Toast.LENGTH_SHORT
-                )
-                    .show()
-            }
+            loginUser(usuario, password)
         }
-
         return view
     }
 
-
+    private fun loginUser(usuario: String, password: String){
+        if (usuario.isNotEmpty() && password.isNotEmpty()) {
+            val sharedPreferences =
+                activity?.getSharedPreferences("LOGIN_DATA", AppCompatActivity.MODE_PRIVATE)
+            val loginData = sharedPreferences?.edit()
+            loginData?.putString("usuario", usuario)
+            loginData?.putString("password", password)
+            loginData?.apply()
+            startActivity(Intent(activity, MainActivity::class.java))
+        } else {
+            Toast.makeText(activity?.applicationContext,"No completaste con tus datos!", Toast.LENGTH_SHORT).show()
+        }
+    }
     companion object {
         fun newInstance(): LoginFragment {
             return LoginFragment()

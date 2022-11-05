@@ -26,6 +26,7 @@
     app:menu="@menu/drawe_menu"
      android:layout_gravity="start"
     android:fitsSystemWindows="true"
+    app:itemTextAppearance="@font/hand_font"
     />
 
 

@@ -5,7 +5,6 @@
     android:id="@+id/frameLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
     tools:context=".main.FragmentSettings">
 
 
@@ -15,7 +14,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40sp"
         android:text="@string/sett_night_mode"
-        android:textColor="@color/black"
         android:textSize="20sp"
         android:layout_marginStart="25sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,7 +25,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20sp"
         android:text="@string/sett_buscador_on"
-        android:textColor="@color/black"
         android:layout_marginStart="25sp"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -39,7 +36,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20sp"
         android:text="@string/sett_favoritos_on"
-        android:textColor="@color/black"
         android:layout_marginStart="25sp"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"

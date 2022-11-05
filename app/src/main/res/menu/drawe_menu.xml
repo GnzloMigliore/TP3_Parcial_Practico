@@ -8,12 +8,19 @@
         android:title="Home"
         />
     <item
-        android:title="Favs"
         android:id="@+id/Favs"
-        />
+        android:title="Favoritos" />
     <item
         android:title="Settings"
         android:id="@+id/Settings"
+        />
+    <item
+        android:title="Logout"
+        android:id="@+id/Logout"
+        />
+    <item
+        android:title="Acerca de G4"
+        android:id="@+id/Acerca"
         />
 </group>
 

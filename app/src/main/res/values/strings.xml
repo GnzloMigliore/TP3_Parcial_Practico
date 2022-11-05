@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">BE-TP3 / Parcial Practico / G4</string>
+    <string name="app_name">G4 - Parcial Practico </string>
 
     <string name="login_usuario">Usuario</string>
     <string name="login_password">Contraseña</string>
@@ -18,8 +18,10 @@
     <string name="sett_buscador_off">Buscador deshabilitado</string>
     <string name="sett_favoritos_on">Permitir agregar favoritos</string>
     <string name="sett_favoritos_off">No permitir agregar favoritos</string>
-
-
-
+    <string name="sett_curso">BE-TP3 / Martin Rivas / 2022</string>
+    <string name="sett_acerca1">Juan Pablo Forno</string>
+    <string name="sett_acerca2">Gonzalo Migliore</string>
+    <string name="sett_acerca3">Daniel Pisa</string>
+    <string name="sett_g4">Group 4</string>
 
 </resources>
