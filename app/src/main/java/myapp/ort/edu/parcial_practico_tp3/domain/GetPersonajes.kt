@@ -10,3 +10,11 @@ class GetPersonajes {
             return repository.getPersonajes()
         }
 }
+
+class GetPersonajesFav {
+    private val repository = PersonajesRespository()
+
+    suspend operator fun invoke(): List<Personajes> {
+        return repository.getPersonajesFav()
+    }
+}
