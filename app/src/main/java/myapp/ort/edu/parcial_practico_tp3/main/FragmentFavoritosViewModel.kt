@@ -9,12 +9,12 @@ import myapp.ort.edu.parcial_practico_tp3.data.model.Personajes
 import myapp.ort.edu.parcial_practico_tp3.domain.GetPersonajesFav
 
 class FragmentFavoritosViewModel : ViewModel() {
-    val ids = "1"
+    val ids = "3,5,8"
 
     val personajesmodel = MutableLiveData<List<Personajes>>().apply {
         var getPersonajesFav = GetPersonajesFav()
         viewModelScope.launch {
-            val result : List<Personajes> = getPersonajesFav()
+            val result : List<Personajes> = getPersonajesFav(ids)
             if (result != null){
                 value = result
             }

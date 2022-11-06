@@ -9,5 +9,5 @@ data class Respuesta (
 )
 
 data class RespuestaPorIds (
-    @SerializedName("") val results : List<Personajes>
+    val results : List<Personajes>
 )

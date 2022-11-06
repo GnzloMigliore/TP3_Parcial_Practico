@@ -8,6 +8,6 @@ interface PersonajesApi {
     @GET("api/character")
     suspend fun getPersonajes():Response<myapp.ort.edu.parcial_practico_tp3.data.model.Respuesta>
 
-    @GET("api/character/1,2")
-    suspend fun getPersonajesFav():Response<List<Personajes>>
+    @GET("api/character/{ids}")
+    suspend fun getPersonajesFav(@Path ("ids") ids: String):Response<List<Personajes>>
 }

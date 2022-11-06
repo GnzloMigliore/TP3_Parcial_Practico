@@ -18,9 +18,9 @@ class PersonajesService {
         }
     }
 
-    suspend fun getPersonajesFav(): List<Personajes> {
+    suspend fun getPersonajesFav(ids: String): List<Personajes> {
         return withContext(Dispatchers.IO){
-            val response = retrofit.create(PersonajesApi::class.java).getPersonajesFav()
+            val response = retrofit.create(PersonajesApi::class.java).getPersonajesFav(ids)
             var respuesta = response.body()
             response.body() ?: emptyList()
 
