@@ -1,41 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/linearLayout"
     android:layout_width="match_parent"
-    android:orientation="horizontal"
-    android:layout_height="match_parent"
-    tools:layout_editor_absoluteX="4dp"
-    tools:layout_editor_absoluteY="0dp">
+    android:layout_height="wrap_content"
+    app:layoutDescription="@xml/item_personajes_scene">
 
     <LinearLayout
         android:id="@+id/card1"
-        android:layout_width="173dp"
-        android:layout_height="220dp"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_marginVertical="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
         android:background="@drawable/my_rouded_bg"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.067"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.17"
         tools:ignore="MissingConstraints">
 
         <ImageView
             android:id="@+id/imgCard1"
-            android:layout_width="132dp"
-            android:layout_height="119dp"
-            android:layout_marginLeft="7dp"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="10dp"
+            android:scaleType="centerCrop"
             android:src="@drawable/rick_and_morty"
             android:textAlignment="center" />
 
         <TextView
             android:id="@+id/text1Card1"
-            android:layout_width="135dp"
-            android:layout_height="35dp"
-            android:layout_marginLeft="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="xxx"
             android:textAlignment="center"
             android:textSize="14sp"
@@ -43,15 +39,12 @@
 
         <TextView
             android:id="@+id/text2Card1"
-            android:layout_width="134dp"
-            android:layout_height="38dp"
-            android:layout_marginLeft="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="xxx"
             android:textAlignment="center"
             android:textSize="12sp"
             tools:ignore="MissingConstraints" />
 
     </LinearLayout>
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

@@ -74,9 +74,9 @@ class FragmentSettings : Fragment() {
 
     private fun toggleBuscador(buscador: Boolean) {
         if (buscador) {
-            tVBuscadorOnOff.setText(getString(R.string.sett_buscador_off))
-        } else {
             tVBuscadorOnOff.setText(getString(R.string.sett_buscador_on))
+        } else {
+            tVBuscadorOnOff.setText(getString(R.string.sett_buscador_off))
         }
     }
 
