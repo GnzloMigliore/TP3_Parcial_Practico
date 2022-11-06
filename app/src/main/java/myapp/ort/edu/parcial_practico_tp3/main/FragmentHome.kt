@@ -40,9 +40,10 @@ class FragmentHome : Fragment() {
         } else {
             sVBuscador.visibility = View.GONE
         }
-        
+
         return v
     }
+
     override fun onStart() {
         super.onStart()
         viewModel = ViewModelProvider(this).get(FragmentHomeViewModel::class.java)
