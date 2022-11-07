@@ -9,4 +9,9 @@ class PersonajesRespository {
         val response = api.getPersonajes()
         return response.results
     }
+    suspend fun getPersonajesFav(ids: String): List<Personajes> {
+        val response = api.getPersonajesFav(ids)
+        return response
+    }
+
 }

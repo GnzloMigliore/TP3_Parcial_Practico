@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import myapp.ort.edu.parcial_practico_tp3.R
@@ -31,13 +32,16 @@ class PersonajesAdapter(val personajes: List<Personajes>):RecyclerView.Adapter<P
         lateinit var title2: TextView
 
         fun render(personaje: Personajes){
-
             imgCard1 = view.findViewById(R.id.imgCard1)
             title1 = view.findViewById(R.id.text1Card1);
             title1.text = personaje.name
             title2 = view.findViewById(R.id.text2Card1);
             title2.setText("Status: " + personaje.status)
             Picasso.with(view.context).load(personaje.image).into(imgCard1)
+            view.setOnClickListener{
+                Toast.makeText(view.context, "Card con id: ${personaje.id}", Toast.LENGTH_SHORT).show();
+                // or your code for imageView
+            }
         }
     }
 }

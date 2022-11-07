@@ -19,6 +19,7 @@ import myapp.ort.edu.parcial_practico_tp3.data.model.Personajes
 class FragmentHome : Fragment() {
     private lateinit var v: View
     private lateinit var sVBuscador: SearchView
+
     companion object {
         fun newInstance() = FragmentHome()
     }
