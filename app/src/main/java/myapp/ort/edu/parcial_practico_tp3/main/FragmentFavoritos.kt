@@ -12,7 +12,8 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import myapp.ort.edu.parcial_practico_tp3.R
-import myapp.ort.edu.parcial_practico_tp3.adapters.PersonajesAdapter
+import myapp.ort.edu.parcial_practico_tp3.adapters.FavAdapter
+import myapp.ort.edu.parcial_practico_tp3.adapters.HomeAdapter
 import myapp.ort.edu.parcial_practico_tp3.data.model.Personajes
 
 class FragmentFavoritos : Fragment() {
@@ -53,14 +54,8 @@ class FragmentFavoritos : Fragment() {
         val manager = GridLayoutManager(this.context, 2)
         recyclerView.setLayoutManager(manager)
         recyclerView.setHasFixedSize(true)
-        val adapter = PersonajesAdapter(personajes)
+        val adapter = FavAdapter(personajes,v)
         recyclerView.adapter = adapter
     }
-    companion object {
 
-        fun newInstance(): FragmentFavoritos {
-            return FragmentFavoritos()
-        }
-
-    }
 }

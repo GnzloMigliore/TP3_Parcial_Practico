@@ -1,7 +1,5 @@
 package myapp.ort.edu.parcial_practico_tp3.adapters
 
-import android.content.Context
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,12 +11,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import myapp.ort.edu.parcial_practico_tp3.R
 import myapp.ort.edu.parcial_practico_tp3.data.model.Personajes
-import myapp.ort.edu.parcial_practico_tp3.main.DetailFragment
+import myapp.ort.edu.parcial_practico_tp3.main.FragmentFavoritos
 import myapp.ort.edu.parcial_practico_tp3.main.FragmentHome
-import myapp.ort.edu.parcial_practico_tp3.main.MainActivity
 
 
-class PersonajesAdapter(val personajes: List<Personajes>, vista : View, fragmentHome: FragmentHome):RecyclerView.Adapter<PersonajesAdapter.PersonajesHolder>(){
+class HomeAdapter(val personajes: List<Personajes>, vista: View, fragmentHome: FragmentHome):RecyclerView.Adapter<HomeAdapter.PersonajesHolder>(){
     var viewFragmentHome = vista
     var fragmentoHome = fragmentHome
 
@@ -39,19 +36,10 @@ class PersonajesAdapter(val personajes: List<Personajes>, vista : View, fragment
         lateinit var imgCard1: ImageView
         lateinit var title1: TextView
         lateinit var title2: TextView
-
-        lateinit var id: TextView
-        lateinit var activity: MainActivity
-        fun render(personaje: Personajes, viewFragment: View,fragmentHome: FragmentHome){
-
-
-        fun render(personaje: Personajes){
-
+        fun render(personaje: Personajes, viewFragment: View, fragmentHome: FragmentHome){
             imgCard1 = view.findViewById(R.id.imgCard1)
             title1 = view.findViewById(R.id.text1Card1);
-            id = view.findViewById(R.id.CardId);
             title1.text = personaje.name
-            id.text = personaje.id.toString()
             title2 = view.findViewById(R.id.text2Card1);
             title2.setText("Status: " + personaje.status)
             Picasso.with(view.context).load(personaje.image).into(imgCard1)
@@ -69,10 +57,6 @@ class PersonajesAdapter(val personajes: List<Personajes>, vista : View, fragment
                     id?.apply()
                 }
                 fragmentHome.changeFragment()
-            view.setOnClickListener{
-                Toast.makeText(view.context, "Card con id: ${personaje.id}", Toast.LENGTH_SHORT).show();
-                // or your code for imageView
-
             }
         }
     }
