@@ -22,6 +22,7 @@ class FragmentHome : Fragment() {
     private lateinit var sVBuscador: SearchView
     lateinit var card: LinearLayout
     lateinit var id: TextView
+
     companion object {
         fun newInstance() = FragmentHome()
     }

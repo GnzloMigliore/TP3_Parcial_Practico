@@ -39,9 +39,14 @@ class PersonajesAdapter(val personajes: List<Personajes>, vista : View, fragment
         lateinit var imgCard1: ImageView
         lateinit var title1: TextView
         lateinit var title2: TextView
+
         lateinit var id: TextView
         lateinit var activity: MainActivity
         fun render(personaje: Personajes, viewFragment: View,fragmentHome: FragmentHome){
+
+
+        fun render(personaje: Personajes){
+
             imgCard1 = view.findViewById(R.id.imgCard1)
             title1 = view.findViewById(R.id.text1Card1);
             id = view.findViewById(R.id.CardId);
@@ -64,6 +69,9 @@ class PersonajesAdapter(val personajes: List<Personajes>, vista : View, fragment
                     id?.apply()
                 }
                 fragmentHome.changeFragment()
+            view.setOnClickListener{
+                Toast.makeText(view.context, "Card con id: ${personaje.id}", Toast.LENGTH_SHORT).show();
+                // or your code for imageView
 
             }
         }
