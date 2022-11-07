@@ -12,17 +12,17 @@ import myapp.ort.edu.parcial_practico_tp3.R
 import myapp.ort.edu.parcial_practico_tp3.main.login.LoginFragment
 
 private lateinit var drawerLayout: DrawerLayout
-private lateinit var toggle : ActionBarDrawerToggle
+private lateinit var toggle: ActionBarDrawerToggle
 
-class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener{
+class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val HomeFragment = FragmentHome()
         replaceFragment(HomeFragment)
         drawerLayout = findViewById(R.id.drawer_layout_id)
-        val navView : NavigationView = findViewById(R.id.navigationView)
-        toggle = ActionBarDrawerToggle(this, drawerLayout,R.string.open,R.string.close )
+        val navView: NavigationView = findViewById(R.id.navigationView)
+        toggle = ActionBarDrawerToggle(this, drawerLayout, R.string.open, R.string.close)
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -33,18 +33,18 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         supportFragmentManager.beginTransaction().apply {
             replace(R.id.frameLayout, fragment)
             commit()
-    }
+        }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if(toggle.onOptionsItemSelected(item)){
+        if (toggle.onOptionsItemSelected(item)) {
             return true
         }
         return super.onOptionsItemSelected(item)
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        when(item.itemId){
+        when (item.itemId) {
             R.id.Home -> replaceFragment(FragmentHome())
             R.id.Favs -> replaceFragment(FragmentFavoritos())
             R.id.Settings -> replaceFragment(FragmentSettings())

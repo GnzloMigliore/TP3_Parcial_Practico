@@ -6,17 +6,15 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 import myapp.ort.edu.parcial_practico_tp3.data.model.Personajes
-
-
 import myapp.ort.edu.parcial_practico_tp3.domain.GetPersonajes
+
 class FragmentHomeViewModel : ViewModel() {
 
     val personajesmodel = MutableLiveData<List<Personajes>>().apply {
         var getPersonajes = GetPersonajes()
         viewModelScope.launch {
-
-            val result : List<Personajes> = getPersonajes()
-            if (result != null){
+            val result: List<Personajes> = getPersonajes()
+            if (result != null) {
                 value = result
             }
         }

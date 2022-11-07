@@ -1,27 +1,23 @@
 package myapp.ort.edu.parcial_practico_tp3.main.login
 
 import android.content.SharedPreferences
-import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
 import myapp.ort.edu.parcial_practico_tp3.R
-import myapp.ort.edu.parcial_practico_tp3.main.FragmentFavoritos
-import myapp.ort.edu.parcial_practico_tp3.main.FragmentHome
-import myapp.ort.edu.parcial_practico_tp3.main.FragmentSettings
 
 class LoginActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferenceChangeListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-        val sharedPreferences = getSharedPreferences("SETTINGS_DATA", AppCompatActivity.MODE_PRIVATE)
+        val sharedPreferences =
+            getSharedPreferences("SETTINGS_DATA", AppCompatActivity.MODE_PRIVATE)
         val mode = sharedPreferences?.getBoolean("nightMode", false) == true
         changeTheme(mode)
         sharedPreferences.registerOnSharedPreferenceChangeListener(this)
         val loginFragment = LoginFragment()
         changeFragment(loginFragment)
-
     }
 
     fun changeFragment(fragment: Fragment) {
@@ -32,7 +28,7 @@ class LoginActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferenceC
     }
 
     private fun changeTheme(mode: Boolean) {
-        when(mode){
+        when (mode) {
             true -> AppCompatDelegate
                 .setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
             false -> AppCompatDelegate

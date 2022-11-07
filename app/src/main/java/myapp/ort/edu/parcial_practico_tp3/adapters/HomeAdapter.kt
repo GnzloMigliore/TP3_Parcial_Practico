@@ -11,11 +11,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import myapp.ort.edu.parcial_practico_tp3.R
 import myapp.ort.edu.parcial_practico_tp3.data.model.Personajes
-import myapp.ort.edu.parcial_practico_tp3.main.FragmentFavoritos
 import myapp.ort.edu.parcial_practico_tp3.main.FragmentHome
 
-
-class HomeAdapter(val personajes: List<Personajes>, vista: View, fragmentHome: FragmentHome):RecyclerView.Adapter<HomeAdapter.PersonajesHolder>(){
+class HomeAdapter(val personajes: List<Personajes>, vista: View, fragmentHome: FragmentHome) :
+    RecyclerView.Adapter<HomeAdapter.PersonajesHolder>() {
     var viewFragmentHome = vista
     var fragmentoHome = fragmentHome
 
@@ -26,17 +25,18 @@ class HomeAdapter(val personajes: List<Personajes>, vista: View, fragmentHome: F
     }
 
     override fun onBindViewHolder(holder: PersonajesHolder, position: Int) {
-        holder.render(personajes[position],viewFragmentHome,fragmentoHome)
+        holder.render(personajes[position], viewFragmentHome, fragmentoHome)
     }
 
     override fun getItemCount(): Int {
         return personajes.size
     }
-    class PersonajesHolder(val view: View):RecyclerView.ViewHolder(view){
+
+    class PersonajesHolder(val view: View) : RecyclerView.ViewHolder(view) {
         lateinit var imgCard1: ImageView
         lateinit var title1: TextView
         lateinit var title2: TextView
-        fun render(personaje: Personajes, viewFragment: View, fragmentHome: FragmentHome){
+        fun render(personaje: Personajes, viewFragment: View, fragmentHome: FragmentHome) {
             imgCard1 = view.findViewById(R.id.imgCard1)
             title1 = view.findViewById(R.id.text1Card1);
             title1.text = personaje.name

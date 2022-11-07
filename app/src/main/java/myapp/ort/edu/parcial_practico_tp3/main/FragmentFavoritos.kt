@@ -13,7 +13,6 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import myapp.ort.edu.parcial_practico_tp3.R
 import myapp.ort.edu.parcial_practico_tp3.adapters.FavAdapter
-import myapp.ort.edu.parcial_practico_tp3.adapters.HomeAdapter
 import myapp.ort.edu.parcial_practico_tp3.data.model.Personajes
 
 class FragmentFavoritos : Fragment() {
@@ -24,7 +23,6 @@ class FragmentFavoritos : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
     }
 
     override fun onCreateView(
@@ -46,15 +44,14 @@ class FragmentFavoritos : Fragment() {
         viewModel.personajes.observe(this, Observer {
             initRecycler(it)
         })
-
     }
 
-    fun initRecycler(personajes: List<Personajes>){
+    fun initRecycler(personajes: List<Personajes>) {
         val recyclerView = v.findViewById<RecyclerView>(R.id.recyclerViewPersonajes)
         val manager = GridLayoutManager(this.context, 2)
         recyclerView.setLayoutManager(manager)
         recyclerView.setHasFixedSize(true)
-        val adapter = FavAdapter(personajes,v)
+        val adapter = FavAdapter(personajes, v)
         recyclerView.adapter = adapter
     }
 

@@ -39,12 +39,11 @@ class FragmentHome : Fragment() {
             activity?.getSharedPreferences("SETTINGS_DATA", AppCompatActivity.MODE_PRIVATE)
         var isVisible = sharedPreferences?.getBoolean("buscador", false) == true
 
-        if(isVisible){
+        if (isVisible) {
             sVBuscador.visibility = View.VISIBLE
         } else {
             sVBuscador.visibility = View.GONE
         }
-
         return v
     }
 
@@ -55,15 +54,17 @@ class FragmentHome : Fragment() {
             initRecycler(it)
         })
     }
-    fun initRecycler(personajes: List<Personajes>){
+
+    fun initRecycler(personajes: List<Personajes>) {
         val recyclerView = v.findViewById<RecyclerView>(R.id.recyclerViewPersonajes)
         val manager = GridLayoutManager(this.context, 2)
         recyclerView.setLayoutManager(manager)
         recyclerView.setHasFixedSize(true)
-        val adapter = HomeAdapter(personajes,v,this)
+        val adapter = HomeAdapter(personajes, v, this)
         recyclerView.adapter = adapter
     }
-    fun changeFragment(){
+
+    fun changeFragment() {
         (activity as MainActivity?)?.replaceFragment(DetailFragment.newInstance())
     }
 }

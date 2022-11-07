@@ -14,8 +14,8 @@ class FragmentFavoritosViewModel : ViewModel() {
     val personajesmodel = MutableLiveData<List<Personajes>>().apply {
         var getPersonajesFav = GetPersonajesFav()
         viewModelScope.launch {
-            val result : List<Personajes> = getPersonajesFav(ids)
-            if (result != null){
+            val result: List<Personajes> = getPersonajesFav(ids)
+            if (result != null) {
                 value = result
             }
         }

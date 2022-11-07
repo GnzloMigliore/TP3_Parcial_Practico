@@ -9,8 +9,8 @@ import myapp.ort.edu.parcial_practico_tp3.R
 import myapp.ort.edu.parcial_practico_tp3.main.login.LoginActivity
 
 class SplashScreen : AppCompatActivity() {
-    companion object{
-        private const val SPLASH_TIME_OUT:Long = 3000
+    companion object {
+        private const val SPLASH_TIME_OUT: Long = 3000
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,7 +21,6 @@ class SplashScreen : AppCompatActivity() {
             {
                 startActivity(Intent(this, LoginActivity::class.java))
                 finish()
-            }
-            , SPLASH_TIME_OUT)
+            }, SPLASH_TIME_OUT)
     }
 }
