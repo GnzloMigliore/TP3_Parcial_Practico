@@ -10,4 +10,7 @@ interface PersonajesApi {
 
     @GET("api/character/{ids}")
     suspend fun getPersonajesFav(@Path ("ids") ids: String):Response<List<Personajes>>
+
+    @GET("api/character/{ids}")
+    suspend fun getPersonaje(@Path ("ids") ids: String):Response<Personajes>
 }

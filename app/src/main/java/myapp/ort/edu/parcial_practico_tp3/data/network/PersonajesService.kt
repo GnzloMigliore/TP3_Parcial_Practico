@@ -17,7 +17,13 @@ class PersonajesService {
             (response.body() ?: null) as Respuesta
         }
     }
-
+    suspend fun getPersonaje(id: String): Personajes {
+        return withContext(Dispatchers.IO){
+            val response = retrofit.create(PersonajesApi::class.java).getPersonaje(id)
+            var respuesta = response.body()
+            (response.body() ?: null) as Personajes
+        }
+    }
     suspend fun getPersonajesFav(ids: String): List<Personajes> {
         return withContext(Dispatchers.IO){
             val response = retrofit.create(PersonajesApi::class.java).getPersonajesFav(ids)
