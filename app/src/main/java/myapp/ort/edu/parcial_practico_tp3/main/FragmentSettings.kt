@@ -32,9 +32,9 @@ class FragmentSettings : Fragment() {
 
         var nightMode = sharedPreferences?.getBoolean("nightMode", false) == true
         toggleNightMode(nightMode)
-        var buscador = sharedPreferences?.getBoolean("buscador", false) == true
+        var buscador = sharedPreferences?.getBoolean("buscador", true) == true
         toggleBuscador(buscador)
-        var favoritos = sharedPreferences?.getBoolean("favoritos", false) == true
+        var favoritos = sharedPreferences?.getBoolean("favoritos", true) == true
         toggleFavoritos(favoritos)
 
         tVSettNightMode.setOnClickListener {
@@ -46,7 +46,7 @@ class FragmentSettings : Fragment() {
         }
 
         tVBuscadorOnOff.setOnClickListener {
-            buscador = sharedPreferences?.getBoolean("buscador", false) == true
+            buscador = sharedPreferences?.getBoolean("buscador", true) == true
             val settingsData = sharedPreferences?.edit()
             settingsData?.putBoolean("buscador", !buscador)
             settingsData?.apply()
@@ -54,7 +54,7 @@ class FragmentSettings : Fragment() {
         }
 
         tVFavoritosOnOff.setOnClickListener {
-            favoritos = sharedPreferences?.getBoolean("favoritos", false) == true
+            favoritos = sharedPreferences?.getBoolean("favoritos", true) == true
             val settingsData = sharedPreferences?.edit()
             settingsData?.putBoolean("favoritos", !favoritos)
             settingsData?.apply()
@@ -65,25 +65,25 @@ class FragmentSettings : Fragment() {
 
     private fun toggleNightMode(nightMode: Boolean) {
         if (nightMode) {
-            tVSettNightMode.setText(getString(R.string.sett_day_mode))
+            tVSettNightMode.text = getString(R.string.sett_day_mode)
         } else {
-            tVSettNightMode.setText(getString(R.string.sett_night_mode))
+            tVSettNightMode.text = getString(R.string.sett_night_mode)
         }
     }
 
     private fun toggleBuscador(buscador: Boolean) {
         if (buscador) {
-            tVBuscadorOnOff.setText(getString(R.string.sett_buscador_on))
+            tVBuscadorOnOff.text = getString(R.string.sett_buscador_on)
         } else {
-            tVBuscadorOnOff.setText(getString(R.string.sett_buscador_off))
+            tVBuscadorOnOff.text = getString(R.string.sett_buscador_off)
         }
     }
 
     private fun toggleFavoritos(favoritos: Boolean) {
         if (favoritos) {
-            tVFavoritosOnOff.setText(getString(R.string.sett_favoritos_off))
+            tVFavoritosOnOff.text = getString(R.string.sett_favoritos_on)
         } else {
-            tVFavoritosOnOff.setText(getString(R.string.sett_favoritos_on))
+            tVFavoritosOnOff.text = getString(R.string.sett_favoritos_off)
         }
     }
 

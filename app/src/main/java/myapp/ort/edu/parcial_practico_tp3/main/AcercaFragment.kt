@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import myapp.ort.edu.parcial_practico_tp3.R
-import myapp.ort.edu.parcial_practico_tp3.main.login.LoginFragment
 
 class AcercaFragment : Fragment() {
 

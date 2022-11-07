@@ -5,7 +5,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitHelper {
-    var gson = GsonBuilder()
+    private var gson = GsonBuilder()
         .setLenient()
         .create()
 

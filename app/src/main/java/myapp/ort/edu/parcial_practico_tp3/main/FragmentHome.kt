@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
 import android.widget.SearchView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -20,7 +19,6 @@ import myapp.ort.edu.parcial_practico_tp3.data.model.Personajes
 class FragmentHome : Fragment() {
     private lateinit var v: View
     private lateinit var sVBuscador: SearchView
-    lateinit var card: LinearLayout
     lateinit var id: TextView
 
     companion object {
@@ -37,7 +35,7 @@ class FragmentHome : Fragment() {
         sVBuscador = v.findViewById(R.id.searchViewHome)
         val sharedPreferences =
             activity?.getSharedPreferences("SETTINGS_DATA", AppCompatActivity.MODE_PRIVATE)
-        var isVisible = sharedPreferences?.getBoolean("buscador", false) == true
+        val isVisible = sharedPreferences?.getBoolean("buscador", true) == true
 
         if (isVisible) {
             sVBuscador.visibility = View.VISIBLE
@@ -55,10 +53,10 @@ class FragmentHome : Fragment() {
         })
     }
 
-    fun initRecycler(personajes: List<Personajes>) {
+    private fun initRecycler(personajes: List<Personajes>) {
         val recyclerView = v.findViewById<RecyclerView>(R.id.recyclerViewPersonajes)
         val manager = GridLayoutManager(this.context, 2)
-        recyclerView.setLayoutManager(manager)
+        recyclerView.layoutManager = manager
         recyclerView.setHasFixedSize(true)
         val adapter = HomeAdapter(personajes, v, this)
         recyclerView.adapter = adapter

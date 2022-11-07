@@ -34,22 +34,22 @@ class FragmentFavoritos : Fragment() {
         val sharedPreferences =
             activity?.getSharedPreferences("LOGIN_DATA", AppCompatActivity.MODE_PRIVATE)
         nombre = sharedPreferences?.getString("usuario", "").toString()
-        tituloFavoritos.setText(getResources().getString(R.string.fav_titulo, nombre))
+        tituloFavoritos.text = resources.getString(R.string.fav_titulo, nombre)
         return v
     }
 
     override fun onStart() {
         super.onStart()
-        viewModel = ViewModelProvider(this).get(FragmentFavoritosViewModel::class.java)
+        viewModel = ViewModelProvider(this)[FragmentFavoritosViewModel::class.java]
         viewModel.personajes.observe(this, Observer {
             initRecycler(it)
         })
     }
 
-    fun initRecycler(personajes: List<Personajes>) {
+    private fun initRecycler(personajes: List<Personajes>) {
         val recyclerView = v.findViewById<RecyclerView>(R.id.recyclerViewPersonajes)
         val manager = GridLayoutManager(this.context, 2)
-        recyclerView.setLayoutManager(manager)
+        recyclerView.layoutManager = manager
         recyclerView.setHasFixedSize(true)
         val adapter = FavAdapter(personajes, v)
         recyclerView.adapter = adapter

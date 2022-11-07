@@ -7,7 +7,3 @@ data class Respuesta(
     @SerializedName("info") val info: Info,
     @SerializedName("results") val results: List<Personajes>
 )
-
-data class RespuestaPorIds(
-    val results: List<Personajes>
-)

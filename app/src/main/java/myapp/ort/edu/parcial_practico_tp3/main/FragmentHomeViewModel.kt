@@ -11,7 +11,7 @@ import myapp.ort.edu.parcial_practico_tp3.domain.GetPersonajes
 class FragmentHomeViewModel : ViewModel() {
 
     val personajesmodel = MutableLiveData<List<Personajes>>().apply {
-        var getPersonajes = GetPersonajes()
+        val getPersonajes = GetPersonajes()
         viewModelScope.launch {
             val result: List<Personajes> = getPersonajes()
             if (result != null) {
