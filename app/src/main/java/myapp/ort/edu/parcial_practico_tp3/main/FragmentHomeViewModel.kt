@@ -14,6 +14,7 @@ class FragmentHomeViewModel : ViewModel() {
     val personajesmodel = MutableLiveData<List<Personajes>>().apply {
         var getPersonajes = GetPersonajes()
         viewModelScope.launch {
+
             val result : List<Personajes> = getPersonajes()
             if (result != null){
                 value = result
